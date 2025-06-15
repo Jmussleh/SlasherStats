@@ -23,4 +23,54 @@ public class horrorMovie {
         this.dateWatched = dateWatched;
     }
 
+    //Getters and setters for all fields in my horror movie object
+    public String getTitle() {
+        return title;
+    }
+    public String getDirector() {
+        return director;
+    }
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+    public int getRuntimeMinutes() {
+        return runtimeMinutes;
+    }
+    public String getStreamingPlatform() {
+        return streamingPlatform;
+    }
+    public String getRating() {
+        return rating;
+    }
+    public String getTags() {
+        return tags;
+    }
+    public String getDateWatched() {
+        return dateWatched;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public void setDirector(String director) {
+        this.director = director;
+    }
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+    public void setRuntimeMinutes(int runtimeMinutes) {
+        this.runtimeMinutes = runtimeMinutes;
+    }
+    public void setStreamingPlatform(String streamingPlatform) {
+        this.streamingPlatform = streamingPlatform;
+    }
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+    public void setDateWatched(String dateWatched) {
+        this.dateWatched = dateWatched;
+    }
 }
