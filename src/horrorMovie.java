@@ -23,7 +23,7 @@ public class horrorMovie {
         this.dateWatched = dateWatched;
     }
 
-    //Getters and setters for all fields in my horror movie object
+    //Getters for all fields in my horror movie object
     public String getTitle() {
         return title;
     }
@@ -49,6 +49,7 @@ public class horrorMovie {
         return dateWatched;
     }
 
+    //Setters for all fields in my horror movie object
     public void setTitle(String title) {
         this.title = title;
     }
@@ -73,4 +74,8 @@ public class horrorMovie {
     public void setDateWatched(String dateWatched) {
         this.dateWatched = dateWatched;
     }
+
+    //Override the toString to show data in a certain manner
+    public String toString() {return "\nTitle" + title + "\nDirector" + director + "\nRelease Year" + releaseYear + "\nRuntime Minutes"
+            + runtimeMinutes + "\nStreaming Platform" + streamingPlatform + "\nRating" + rating + "\nTags" + tags + "\nDateWatched" + dateWatched;}
 }
