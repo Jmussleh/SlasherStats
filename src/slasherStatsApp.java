@@ -24,7 +24,25 @@ public class slasherStatsApp {
                 case "3": updateMovie(); break;
                 case "4": deleteMovie(); break;
                 case "5": viewAccountPoints(); break;
+                //Ends the program and displays a message to the user
+                case "6": running = false;
+                System.out.println("System is powering down...");
+                break;
+                default:
+                    //Catches invalid inputs from the user and restarts the loop
+                    System.out.println("Invalid input");
             }
         }
+    }
+    //Method for displaying the SlasherStats CLI menu
+    static void displayMenu() {
+        System.out.println("\n---*Welcome to the SlasherStats App*---");
+        System.out.println("1. Create Horror Movie Entry");
+        System.out.println("2. View All Movies");
+        System.out.println("3. Update Movie Entry");
+        System.out.println("4. Delete Movie Entry");
+        System.out.println("5. View Account Points");
+        System.out.println("6. Exit");
+        System.out.print("Choose an option: ");
     }
 }
