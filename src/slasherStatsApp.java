@@ -17,7 +17,14 @@ public class slasherStatsApp {
             displayMenu();
             String input = sc.nextLine();
             //Determines the action
-            switch (input) {}
+            switch (input) {
+                //Executes the appropriate method based on user input
+                case "1": createMovie(); break;
+                case "2": viewMovies(); break;
+                case "3": updateMovie(); break;
+                case "4": deleteMovie(); break;
+                case "5": viewAccountPoints(); break;
+            }
         }
     }
 }
