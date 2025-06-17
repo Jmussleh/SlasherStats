@@ -152,13 +152,33 @@ public class slasherStatsApp {
                     break;
                 //Reads user input and changes movie date watched
                 case "8":
-                    System.out.println("Enter datewatched: ");
+                    System.out.println("Enter date watched: ");
                     movie.setDateWatched(sc.nextLine());
                     break;
+                //If invalid options are chosen, display this message and return to the beginning to select a choice again.
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    return;
             }
+            System.out.println("Movie updated...\n" + movie);
+        } catch (Exception e) {
+            System.out.println("Invalid input. Update failed...");
         }
-
-
+    }
+    //method to delete movie by title
+    static void deleteMovie() {
+        System.out.println("Enter title of movie to delete: ");
+        String title = sc.nextLine();
+        //find movie by title, if movie is not found display this message
+        horrorMovie movie = findMovie(title);
+        if (movie == null) {
+            System.out.println("Movie not found");
+            return;
+        }
+        //remove the movie if found. Take away 10 points from the account ad display a confirmation message.
+        movies.remove(movie);
+        accountPoints -= 10;
+        System.out.println("Movie deleted...\n" + movie);
     }
 
 }
