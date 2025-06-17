@@ -181,4 +181,19 @@ public class slasherStatsApp {
         System.out.println("Movie deleted...\n" + movie);
     }
 
+    //method to view account points
+    static void viewAccountPoints() {
+        System.out.println("Current account points: " + accountPoints);
+    }
+
+    //method to find a horror movie by title
+    static horrorMovie findMovie(String title) {
+        for (horrorMovie movie : movies) {
+            if (movie.getTitle().equals(title)) {
+                return movie;
+            }
+        }
+        return null;
+    }
+
 }
