@@ -46,28 +46,56 @@ public class slasherStatsApp {
     }
     //Method for creating a movie object
     static void createMovie() {
-        System.out.println("Enter movie title: ");
-        String title = sc.nextLine();
+        try {
+            System.out.println("Enter movie title: ");
+            String title = sc.nextLine();
 
-        System.out.println("Enter movie director: ");
-        String director = sc.nextLine();
+            System.out.println("Enter movie director: ");
+            String director = sc.nextLine();
 
-        System.out.println("Enter year of release: ");
-        int year = sc.nextInt();
+            System.out.println("Enter year of release: ");
+            int year = sc.nextInt();
 
-        System.out.println("Enter runtime minutes: ");
-        int runtimeMinutes = sc.nextInt();
+            System.out.println("Enter runtime minutes: ");
+            int runtimeMinutes = sc.nextInt();
 
-        System.out.println("Enter streaming platform: ");
-        String streamingPlatform = sc.nextLine();
+            System.out.println("Enter streaming platform: ");
+            String streamingPlatform = sc.nextLine();
 
-        System.out.println("Enter rating: ");
-        double rating = sc.nextDouble();
+            System.out.println("Enter rating: ");
+            double rating = sc.nextDouble();
 
-        System.out.println("Enter tags: ");
-        String tags = sc.nextLine();
+            System.out.println("Enter tags: ");
+            String tags = sc.nextLine();
 
-        System.out.println("Enter datewatched: ");
-        boolean dateWatched = sc.nextBoolean();
+            System.out.println("Enter datewatched: ");
+            boolean dateWatched = sc.nextBoolean();
+
+            horrorMovie movie = new horrorMovie(title, director, year, runtimeMinutes, streamingPlatform, rating, tags, dateWatched);
+            //adds a movie to the list
+            movies.add(movie);
+            //when a new movie is added, 10 points are added to accountPoints
+            accountPoints += 10;
+            //message to let the user know that the addition was successful
+            System.out.println("Horror movie added...");
+            //catches the exception if there is an error
+        } catch (Exception e) {
+            System.out.println("Invalid input. Please try again.");
+        }
     }
+    //method to view movies
+    static void viewMovies() {
+        //if the list is empty, send this error message
+        if (movies.isEmpty()) {
+            System.out.println("There are no horror movies in the database.");
+            return;
+        }
+        //for every movie in the list, print this
+        for (horrorMovie movie : movies) {
+            System.out.println(movie);
+        }
+    }
+    //method for updating a movie
+    static void updateMovie() {}
+
 }
