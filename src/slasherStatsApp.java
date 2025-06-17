@@ -96,6 +96,69 @@ public class slasherStatsApp {
         }
     }
     //method for updating a movie
-    static void updateMovie() {}
+    static void updateMovie() {
+        System.out.println("Enter title of movie to update: ");
+        //reads user input for title
+        String title = sc.nextLine();
+        //finds the desired movie to update by title
+        horrorMovie movie = findMovie(title);
+        //if movie is not in database, display this message
+        if (movie == null) {
+            System.out.println("Movie not found");
+            return;
+        }
+        //update method movie menu
+        System.out.println("Choose a field to update: ");
+        System.out.println("1. Title\n2. Director\n3. Release Year\n4. Runtime (Minutes)\n5. Streaming Platform\n6. Rating\n7. Tags\n8. Date Watched");
+        //Scans user input for a field
+        String field = sc.nextLine();
+
+        try {
+            switch (field) {
+                //Reads user input and changes movie title
+                case "1":
+                    System.out.println("Enter movie title: ");
+                    movie.setTitle(sc.nextLine());
+                    break;
+                //Reads user input and changes movie director
+                case "2":
+                    System.out.println("Enter movie director: ");
+                    movie.setDirector(sc.nextLine());
+                    break;
+                //Reads user input and changes movie year of release
+                case "3":
+                    System.out.println("Enter year of release: ");
+                    movie.setReleaseYear(sc.nextInt());
+                    break;
+                //Reads user input and changes movie runtime minutes
+                case "4":
+                    System.out.println("Enter runtime minutes: ");
+                    movie.setRuntimeMinutes(sc.nextInt());
+                    break;
+                //Reads user input and changes movie streaming platform
+                case "5":
+                    System.out.println("Enter streaming platform: ");
+                    movie.setStreamingPlatform(sc.nextLine());
+                    break;
+                //Reads user input and changes movie rating
+                case "6":
+                    System.out.println("Enter rating: ");
+                    movie.setStreamingPlatform(sc.nextLine());
+                    break;
+                //Reads user input and changes movie tags
+                case "7":
+                    System.out.println("Enter tags: ");
+                    movie.setTags(sc.nextLine());
+                    break;
+                //Reads user input and changes movie date watched
+                case "8":
+                    System.out.println("Enter datewatched: ");
+                    movie.setDateWatched(sc.nextLine());
+                    break;
+            }
+        }
+
+
+    }
 
 }
