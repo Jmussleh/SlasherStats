@@ -43,6 +43,31 @@ public class slasherStatsApp {
         System.out.println("4. Delete Movie Entry");
         System.out.println("5. View Account Points");
         System.out.println("6. Exit");
-        System.out.print("Choose an option: ");
+    }
+    //Method for creating a movie object
+    static void createMovie() {
+        System.out.println("Enter movie title: ");
+        String title = sc.nextLine();
+
+        System.out.println("Enter movie director: ");
+        String director = sc.nextLine();
+
+        System.out.println("Enter year of release: ");
+        int year = sc.nextInt();
+
+        System.out.println("Enter runtime minutes: ");
+        int runtimeMinutes = sc.nextInt();
+
+        System.out.println("Enter streaming platform: ");
+        String streamingPlatform = sc.nextLine();
+
+        System.out.println("Enter rating: ");
+        double rating = sc.nextDouble();
+
+        System.out.println("Enter tags: ");
+        String tags = sc.nextLine();
+
+        System.out.println("Enter datewatched: ");
+        boolean dateWatched = sc.nextBoolean();
     }
 }
