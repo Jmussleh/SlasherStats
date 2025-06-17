@@ -12,7 +12,7 @@ public class horrorMovie {
     private String dateWatched;
 
     //Constructor
-    public horrorMovie(String title, String director, int releaseYear, int runtimeMinutes, String streamingPlatform, String rating, String tags, String dateWatched) {
+    public horrorMovie(String title, String director, int releaseYear, int runtimeMinutes, String streamingPlatform, double rating, String tags, String dateWatched) {
         this.title = title;
         this.director = director;
         this.releaseYear = releaseYear;

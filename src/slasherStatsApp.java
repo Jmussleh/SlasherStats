@@ -54,22 +54,25 @@ public class slasherStatsApp {
             String director = sc.nextLine();
 
             System.out.println("Enter year of release: ");
-            int year = sc.nextInt();
+            int year = Integer.parseInt(sc.nextLine());
 
             System.out.println("Enter runtime minutes: ");
-            int runtimeMinutes = sc.nextInt();
+            int runtimeMinutes = Integer.parseInt(sc.nextLine());
 
             System.out.println("Enter streaming platform: ");
             String streamingPlatform = sc.nextLine();
 
             System.out.println("Enter rating: ");
-            double rating = sc.nextDouble();
+            double rating = Double.parseDouble(sc.nextLine());
+            if (rating < 0.0 || rating > 10.0) {
+                throw new IllegalArgumentException("Invalid rating value. Rating must be between 0.0 and 10.0.");
+            }
 
             System.out.println("Enter tags: ");
             String tags = sc.nextLine();
 
-            System.out.println("Enter datewatched: ");
-            boolean dateWatched = sc.nextBoolean();
+            System.out.println("Enter date watched: ");
+            String dateWatched = sc.nextLine();
 
             horrorMovie movie = new horrorMovie(title, director, year, runtimeMinutes, streamingPlatform, rating, tags, dateWatched);
             //adds a movie to the list
