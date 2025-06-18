@@ -92,21 +92,23 @@ public class slasherStatsApp {
             if (rating < 0.0 || rating > 10.0) {
                 throw new IllegalArgumentException("Invalid rating value. Rating must be between 0.0 and 10.0.");
             }
-
+            //Prompts the user to enter tags
             System.out.println("Enter tags: ");
             String tags = scanner.nextLine();
-
+            //prompts the user to enter the date in a specific format
             System.out.println("Enter date watched (MM-DD-YYYY): ");
             String dateWatched;
+            //makes the date format rules strict
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-uuuu")
                     .withResolverStyle(ResolverStyle.STRICT);
-
+            //while the statement is true read the line
             while (true) {
                 String input = scanner.nextLine();
                 try {
                     LocalDate.parse(input, formatter);
                     dateWatched = input;
                     break;
+                    //If the date is invalid return this message and try again
                 } catch (DateTimeParseException e) {
                     System.out.println("Invalid date. Please enter in MM-DD-YYYY format:");
                 }
