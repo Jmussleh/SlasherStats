@@ -7,7 +7,7 @@ public class horrorMovie {
     private int releaseYear;
     private int runtimeMinutes;
     private String streamingPlatform;
-    private String rating;
+    private double rating;
     private String tags;
     private String dateWatched;
 

@@ -3,19 +3,25 @@ import java.util.*;
 
 public class slasherStatsApp {
     //scanner object for reading user input from the console
-    static Scanner sc = new Scanner(System.in);
+    private Scanner scanner;
     //Creates a list to show horror movie objects that are created by the user
-    static List<horrorMovie> movies = new ArrayList<>();
+    private List<horrorMovie> movies;
     //starts account points at 0 as a starting point
-    static int accountPoints = 0;
+    private int accountPoints;
 
     //starts the program and controls the loop
-    public static void main(String[] args) {
+    public slasherStatsApp() {
+        this.scanner = new Scanner(System.in);
+        this.movies = new ArrayList<>();
+        this.accountPoints = 0;
+    }
+
+    public void run() {
         boolean running = true;
         while (running) {
             //Displays the menu and reads the user choice
             displayMenu();
-            String input = sc.nextLine();
+            String input = scanner.nextLine();
             //Determines the action
             switch (input) {
                 //Executes the appropriate method based on user input
@@ -35,7 +41,7 @@ public class slasherStatsApp {
         }
     }
     //Method for displaying the SlasherStats CLI menu
-    static void displayMenu() {
+    private void displayMenu() {
         System.out.println("\n---*Welcome to the SlasherStats App*---");
         System.out.println("1. Create Horror Movie Entry");
         System.out.println("2. View All Movies");
@@ -45,34 +51,34 @@ public class slasherStatsApp {
         System.out.println("6. Exit");
     }
     //Method for creating a movie object
-    static void createMovie() {
+    private void createMovie() {
         try {
             System.out.println("Enter movie title: ");
-            String title = sc.nextLine();
+            String title = scanner.nextLine();
 
             System.out.println("Enter movie director: ");
-            String director = sc.nextLine();
+            String director = scanner.nextLine();
 
             System.out.println("Enter year of release: ");
-            int year = Integer.parseInt(sc.nextLine());
+            int year = Integer.parseInt(scanner.nextLine());
 
             System.out.println("Enter runtime minutes: ");
-            int runtimeMinutes = Integer.parseInt(sc.nextLine());
+            int runtimeMinutes = Integer.parseInt(scanner.nextLine());
 
             System.out.println("Enter streaming platform: ");
-            String streamingPlatform = sc.nextLine();
+            String streamingPlatform = scanner.nextLine();
 
             System.out.println("Enter rating: ");
-            double rating = Double.parseDouble(sc.nextLine());
+            double rating = Double.parseDouble(scanner.nextLine());
             if (rating < 0.0 || rating > 10.0) {
                 throw new IllegalArgumentException("Invalid rating value. Rating must be between 0.0 and 10.0.");
             }
 
             System.out.println("Enter tags: ");
-            String tags = sc.nextLine();
+            String tags = scanner.nextLine();
 
             System.out.println("Enter date watched: ");
-            String dateWatched = sc.nextLine();
+            String dateWatched = scanner.nextLine();
 
             horrorMovie movie = new horrorMovie(title, director, year, runtimeMinutes, streamingPlatform, rating, tags, dateWatched);
             //adds a movie to the list
@@ -87,7 +93,7 @@ public class slasherStatsApp {
         }
     }
     //method to view movies
-    static void viewMovies() {
+    private void viewMovies() {
         //if the list is empty, send this error message
         if (movies.isEmpty()) {
             System.out.println("There are no horror movies in the database.");
@@ -99,10 +105,10 @@ public class slasherStatsApp {
         }
     }
     //method for updating a movie
-    static void updateMovie() {
+    private void updateMovie() {
         System.out.println("Enter title of movie to update: ");
         //reads user input for title
-        String title = sc.nextLine();
+        String title = scanner.nextLine();
         //finds the desired movie to update by title
         horrorMovie movie = findMovie(title);
         //if movie is not in database, display this message
@@ -114,49 +120,49 @@ public class slasherStatsApp {
         System.out.println("Choose a field to update: ");
         System.out.println("1. Title\n2. Director\n3. Release Year\n4. Runtime (Minutes)\n5. Streaming Platform\n6. Rating\n7. Tags\n8. Date Watched");
         //Scans user input for a field
-        String field = sc.nextLine();
+        String field = scanner.nextLine();
 
         try {
             switch (field) {
                 //Reads user input and changes movie title
                 case "1":
                     System.out.println("Enter movie title: ");
-                    movie.setTitle(sc.nextLine());
+                    movie.setTitle(scanner.nextLine());
                     break;
                 //Reads user input and changes movie director
                 case "2":
                     System.out.println("Enter movie director: ");
-                    movie.setDirector(sc.nextLine());
+                    movie.setDirector(scanner.nextLine());
                     break;
                 //Reads user input and changes movie year of release
                 case "3":
                     System.out.println("Enter year of release: ");
-                    movie.setReleaseYear(sc.nextInt());
+                    movie.setReleaseYear(scanner.nextInt());
                     break;
                 //Reads user input and changes movie runtime minutes
                 case "4":
                     System.out.println("Enter runtime minutes: ");
-                    movie.setRuntimeMinutes(sc.nextInt());
+                    movie.setRuntimeMinutes(scanner.nextInt());
                     break;
                 //Reads user input and changes movie streaming platform
                 case "5":
                     System.out.println("Enter streaming platform: ");
-                    movie.setStreamingPlatform(sc.nextLine());
+                    movie.setStreamingPlatform(scanner.nextLine());
                     break;
                 //Reads user input and changes movie rating
                 case "6":
                     System.out.println("Enter rating: ");
-                    movie.setStreamingPlatform(sc.nextLine());
+                    movie.setRating(scanner.nextLine());
                     break;
                 //Reads user input and changes movie tags
                 case "7":
                     System.out.println("Enter tags: ");
-                    movie.setTags(sc.nextLine());
+                    movie.setTags(scanner.nextLine());
                     break;
                 //Reads user input and changes movie date watched
                 case "8":
                     System.out.println("Enter date watched: ");
-                    movie.setDateWatched(sc.nextLine());
+                    movie.setDateWatched(scanner.nextLine());
                     break;
                 //If invalid options are chosen, display this message and return to the beginning to select a choice again.
                 default:
@@ -169,9 +175,9 @@ public class slasherStatsApp {
         }
     }
     //method to delete movie by title
-    static void deleteMovie() {
+    private void deleteMovie() {
         System.out.println("Enter title of movie to delete: ");
-        String title = sc.nextLine();
+        String title = scanner.nextLine();
         //find movie by title, if movie is not found display this message
         horrorMovie movie = findMovie(title);
         if (movie == null) {
@@ -185,12 +191,12 @@ public class slasherStatsApp {
     }
 
     //method to view account points
-    static void viewAccountPoints() {
+    private void viewAccountPoints() {
         System.out.println("Current account points: " + accountPoints);
     }
 
     //method to find a horror movie by title
-    static horrorMovie findMovie(String title) {
+    private horrorMovie findMovie(String title) {
         for (horrorMovie movie : movies) {
             if (movie.getTitle().equals(title)) {
                 return movie;
@@ -198,5 +204,7 @@ public class slasherStatsApp {
         }
         return null;
     }
-
+    public static void main(String[] args) {
+        new slasherStatsApp().run();
+    }
 }
