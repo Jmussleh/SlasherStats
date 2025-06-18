@@ -49,6 +49,7 @@ public class slasherStatsApp {
         System.out.println("4. Delete Movie Entry");
         System.out.println("5. View Account Points");
         System.out.println("6. Exit");
+        System.out.println("Enter your choice: ");
     }
     //Method for creating a movie object
     private void createMovie() {
@@ -77,7 +78,7 @@ public class slasherStatsApp {
             System.out.println("Enter tags: ");
             String tags = scanner.nextLine();
 
-            System.out.println("Enter date watched: ");
+            System.out.println("Enter date watched (MM-DD-YYYY): ");
             String dateWatched = scanner.nextLine();
 
             horrorMovie movie = new horrorMovie(title, director, year, runtimeMinutes, streamingPlatform, rating, tags, dateWatched);
@@ -151,8 +152,10 @@ public class slasherStatsApp {
                     break;
                 //Reads user input and changes movie rating
                 case "6":
-                    System.out.println("Enter rating: ");
-                    movie.setRating(scanner.nextLine());
+                    System.out.println("Enter rating (between 0.0 and 10.0): ");
+                    //converts double to String for scanner
+                    double newRating = Double.parseDouble(scanner.nextLine());
+                    movie.setRating(newRating);
                     break;
                 //Reads user input and changes movie tags
                 case "7":

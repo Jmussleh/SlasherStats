@@ -39,7 +39,7 @@ public class horrorMovie {
     public String getStreamingPlatform() {
         return streamingPlatform;
     }
-    public String getRating() {
+    public double getRating() {
         return rating;
     }
     public String getTags() {
@@ -65,7 +65,7 @@ public class horrorMovie {
     public void setStreamingPlatform(String streamingPlatform) {
         this.streamingPlatform = streamingPlatform;
     }
-    public void setRating(String rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
     public void setTags(String tags) {
@@ -76,6 +76,6 @@ public class horrorMovie {
     }
 
     //Override the toString to show data in a certain manner
-    public String toString() {return "\nTitle" + title + "\nDirector" + director + "\nRelease Year" + releaseYear + "\nRuntime Minutes"
-            + runtimeMinutes + "\nStreaming Platform" + streamingPlatform + "\nRating" + rating + "\nTags" + tags + "\nDateWatched" + dateWatched;}
+    public String toString() {return "\nTitle: " + title + "\nDirector: " + director + "\nRelease Year: " + releaseYear + "\nRuntime Minutes: "
+            + runtimeMinutes + "\nStreaming Platform: " + streamingPlatform + "\nRating: " + rating + "\nTags: " + tags + "\nDateWatched: " + dateWatched;}
 }
