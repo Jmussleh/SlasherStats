@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SlasherStats:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SlasherStats_jar</output-path>
+    <root id="archive" name="SlasherStats.jar">
+      <element id="module-output" name="SlasherStats" />
+    </root>
+  </artifact>
+</component>
