@@ -1,0 +1,30 @@
+The Shining,Stanley Kubrick,1980,146,HBO Max,8.4,psychological,10-01-2021
+Hereditary,Ari Aster,2018,127,Hulu,7.3,supernatural,10-02-2021
+Midsommar,Ari Aster,2019,148,Prime Video,7.1,folk,10-03-2021
+Get Out,Jordan Peele,2017,104,Peacock,7.7,thriller,10-04-2021
+The Babadook,Jennifer Kent,2014,94,Hulu,6.9,psychological,10-05-2021
+It Follows,David Robert Mitchell,2014,100,Netflix,6.8,supernatural,10-06-2021
+The Witch,Robert Eggers,2015,92,HBO Max,6.9,folk,10-07-2021
+The Conjuring,James Wan,2013,112,HBO Max,7.5,haunting,10-08-2021
+The Ring,Gore Verbinski,2002,115,Paramount+,7.1,supernatural,10-09-2021
+Sinister,Scott Derrickson,2012,110,Hulu,6.8,demonic,10-10-2021
+Insidious,James Wan,2010,103,Netflix,6.8,supernatural,10-11-2021
+The Others,Alejandro Amenábar,2001,104,Prime Video,7.6,ghost,10-12-2021
+The Exorcist,William Friedkin,1973,122,HBO Max,8.1,demonic,10-13-2021
+The Blair Witch Project,Daniel Myrick,1999,81,Hulu,6.5,found footage,10-14-2021
+A Quiet Place,John Krasinski,2018,90,Paramount+,7.5,monster,10-15-2021
+The Invisible Man,Leigh Whannell,2020,124,HBO Max,7.1,thriller,10-16-2021
+The Texas Chain Saw Massacre,Tobe Hooper,1974,83,Shudder,7.4,slasher,10-17-2021
+Halloween,John Carpenter,1978,91,Shudder,7.7,slasher,10-18-2021
+Friday the 13th,Sean S. Cunningham,1980,95,Shudder,6.4,slasher,10-19-2021
+The Thing,John Carpenter,1982,109,HBO Max,8.2,creature,10-20-2021
+It,Andy Muschietti,2017,135,HBO Max,7.3,clown,10-21-2021
+The Grudge,Takashi Shimizu,2004,91,Netflix,5.9,supernatural,10-22-2021
+Us,Jordan Peele,2019,116,Peacock,6.8,thriller,10-23-2021
+Candyman,Nia DaCosta,2021,91,Peacock,6.0,urban legend,10-24-2021
+Smile,Parker Finn,2022,115,Paramount+,6.5,psychological,10-25-2021
+Barbarian,Zach Cregger,2022,102,HBO Max,7.0,home invasion,10-26-2021
+Talk to Me,Danny Philippou,2023,95,Hulu,7.1,paranormal,10-27-2021
+Pearl,Ti West,2022,102,Prime Video,7.0,psychological,10-28-2021
+X,Ti West,2022,106,Peacock,6.6,slasher,10-29-2021
+The Boogeyman,Rob Savage,2023,98,Hulu,5.9,monster,10-30-2021
