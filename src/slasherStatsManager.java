@@ -45,7 +45,7 @@ public class slasherStatsManager {
         return true;
     }
 
-    public List<horrorMovie> addBulkMovies(String filename) {
+    public List<horrorMovie> bulkMovies(String filename) {
         //Makes a list for movies that are successfully added
         List<horrorMovie> added = new ArrayList<>();
         try (Scanner fileScanner = new Scanner(new File(filename))) {
@@ -87,7 +87,7 @@ public class slasherStatsManager {
         return added;
     }
     //Method used to update a movie by searching for it by title
-    public boolean updateMovieField(String title, int fieldChoice, String newValue) {
+    public boolean updateMovieField(String title, int fieldChoice, String value) {
         //Looks for the movie in the database
         horrorMovie movie = findMovie(title);
         //If the movie does not exist return false
@@ -97,28 +97,28 @@ public class slasherStatsManager {
             //Allows a user to select a number to indicate which field to update
             switch (fieldChoice) {
                 //Choice to set new title
-                case 1 -> movie.setTitle(newValue);
+                case 1 -> movie.setTitle(value);
                 //Choice to set new director
-                case 2 -> movie.setDirector(newValue);
+                case 2 -> movie.setDirector(value);
                 //Choice to set a new release year
-                case 3 -> movie.setReleaseYear(Integer.parseInt(newValue));
+                case 3 -> movie.setReleaseYear(Integer.parseInt(value));
                 //Choice to set new runtime minutes
-                case 4 -> movie.setRuntimeMinutes(Integer.parseInt(newValue));
+                case 4 -> movie.setRuntimeMinutes(Integer.parseInt(value));
                 //Choice to set new streaming platform
-                case 5 -> movie.setStreamingPlatform(newValue);
+                case 5 -> movie.setStreamingPlatform(value);
                 //Choice to set new user rating
                 case 6 -> {
-                    double rating = Double.parseDouble(newValue);
+                    double rating = Double.parseDouble(value);
                     if (rating < 0.0 || rating > 10.0) return false;
                     movie.setRating(rating);
                 }
                 //Choice to set new tags
-                case 7 -> movie.setTags(newValue);
+                case 7 -> movie.setTags(value);
                 //Choice to set new date
                 case 8 -> {
                     //Ensures that the date is valid
-                    if (!isValidDate(newValue)) return false;
-                    movie.setDateWatched(newValue);
+                    if (!isValidDate(value)) return false;
+                    movie.setDateWatched(value);
                 }
                 //If none of the appropriate case values are picked return false
                 default -> {

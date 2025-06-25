@@ -35,9 +35,9 @@ public class slasherStatsApp {
                     break;
                 //Adds movies from a bulk .txt file
                 case "2":
-                    System.out.print("Enter filename: ");
+                    System.out.print("Enter file path: ");
                     String filename = scanner.nextLine();
-                    List<horrorMovie> bulkAdded = appManager.addBulkMovies(filename);
+                    List<horrorMovie> bulkAdded = appManager.bulkMovies(filename);
                     //Prints this to the console if movies are added. Also tells user how many were added.
                     System.out.println("Added " + bulkAdded.size() + " movies.");
                     break;
@@ -69,7 +69,7 @@ public class slasherStatsApp {
                     System.out.print("Enter choice: ");
                     int field = Integer.parseInt(scanner.nextLine());
                     //Prompts the user to enter the valur for the field to update
-                    System.out.print("Enter the new field: ");
+                    System.out.print("Enter the new field value: ");
                     //Reads the new value from user input
                     String newValue = scanner.nextLine();
                     //Updates the selected field to the new value

@@ -102,7 +102,7 @@ public class slasherStatsTests {
 
     @Test
     //Test case for successfully adding a bulk movie file
-    public void testAddBulkMoviesSuccess() throws Exception {
+    public void testbulkMoviesSuccess() throws Exception {
         //Looks for a test .txt file
         String filename = "test_bulk_movies.txt";
         //Writes a test file with two movies added
@@ -111,16 +111,16 @@ public class slasherStatsTests {
             writer.println("The Babadook,Jennifer Kent,2014,94,Hulu,6.9,psychological,10-30-2021");
         }
         //Adds the movies to the list
-        List<horrorMovie> added = appManager.addBulkMovies(filename);
+        List<horrorMovie> added = appManager.bulkMovies(filename);
         //Expects that there will be two movies in the database
         assertEquals(2, added.size());
     }
 
     @Test
     //Test case for failure to add a bulk movie file
-    public void testAddBulkMoviesFailure() {
+    public void testbulkMoviesFailure() {
         //Tries to add a file that does not exist
-        List<horrorMovie> added = appManager.addBulkMovies("nonexistent_file.txt");
+        List<horrorMovie> added = appManager.bulkMovies("randomfile.txt");
         //Expects that the size of the database will be zero because no movies were successfully added
         assertEquals(0, added.size());
     }
@@ -148,9 +148,9 @@ public class slasherStatsTests {
     //Test case for removing points from a user account when a movie is deleted from the database
     public void testAccountPointsSubtract() {
         //Add a random movie
-        appManager.addMovie(new horrorMovie("Movie1", "Director", 2020, 100, "Platform", 5.0, "tag", "10-10-2020"));
+        appManager.addMovie(new horrorMovie("Movie", "Director", 2025, 100, "Platform", 5.0, "tag", "06-25-2025"));
         //Delete the random movie that was added
-        appManager.deleteMovie("Movie1");
+        appManager.deleteMovie("Movie");
         //Expects that accountPoints will equal zero
         assertEquals(0, appManager.getAccountPoints());
         //Attempts to delete a movie that does not exist
