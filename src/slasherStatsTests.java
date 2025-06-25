@@ -145,7 +145,7 @@ public class slasherStatsTests {
     }
 
     @Test
-    //Test case for removing points from a user account when a movie is deleted from the databse
+    //Test case for removing points from a user account when a movie is deleted from the database
     public void testAccountPointsSubtract() {
         //Add a random movie
         appManager.addMovie(new horrorMovie("Movie1", "Director", 2020, 100, "Platform", 5.0, "tag", "10-10-2020"));
